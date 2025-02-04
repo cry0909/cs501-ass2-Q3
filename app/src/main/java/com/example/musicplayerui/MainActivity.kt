@@ -24,10 +24,10 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            MaterialTheme {  // Updated to MaterialTheme instead of MusicPlayerTheme
+            MaterialTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = Color(0xFF121212) // Dark theme background
+                    color = Color(0xFF121212)
                 ) {
                     StaticMusicPlayerUI()
                 }
@@ -96,7 +96,7 @@ fun StaticMusicPlayerUI() {
 @Composable
 fun MusicControlButton(imageRes: Int, contentDescription: String) {
     IconButton(
-        onClick = { /* No action, static UI */ },
+        onClick = { },
         modifier = Modifier
             .size(64.dp)
             .background(Color.DarkGray, shape = CircleShape)
@@ -104,7 +104,7 @@ fun MusicControlButton(imageRes: Int, contentDescription: String) {
         Image(
             painter = painterResource(id = imageRes),
             contentDescription = contentDescription,
-            modifier = Modifier.size(48.dp) // Adjust size to fit within button
+            modifier = Modifier.size(48.dp)
         )
     }
 }
